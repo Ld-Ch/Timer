@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PPT Timer</title>
+<link rel="icon" href="pixel-hourglass.ico" type="image/x-icon">
+<link rel="stylesheet" href="style-v2.css">
+<script src="app-2.js" defer></script>
+
+</head>
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    
+    <div id="sidebarOverlay"></div>
+
+    <div class="sidebar" id="sidebar">
+
+        <h2>Presets</h2>
+
+        <div id="presetList"></div>
+
+    </div>
+
+    <button class="toggle-btn" onclick="toggleSidebar()">
+        ☰
+    </button>
+
+    <!-- MAIN -->
+
+    <div class="main">
+        <div class="container">
+
+            <!-- TOP TIMER -->
+        
+            <h1>Presentation Timer</h1>
+        
+            <div class="main-time" id="mainCountdown">
+                00:00
+            </div>
+        
+            <div class="next-trigger" id="nextTriggerText">
+                Waiting...
+            </div>
+        
+            <!-- PROGRESS BAR -->
+        
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+        
+            <!-- SETTINGS -->
+        
+            <div style="margin-top: 30px;">
+        
+                <label>Trigger Times (minutes)</label>
+        
+                <input
+                    type="text"
+                    id="timesInput"
+                    placeholder="Ex. 5,1.5,10"
+                >
+                
+                <div class="color-selectors">
+
+                    <div id="Bar-color">
+                        <label>Progress Bar Color</label>
+                    
+                        <input class="color-input"
+                            type="color"
+                            id="accentColor"
+                            value="#00fffc"
+                        >
+                    </div>
+                    
+                    <div id="alert-color">
+                        <label>Alert Flash Color</label>
+        
+                        <input class="color-input"
+                            type="color"
+                            id="flashColor"
+                            value="#aaaaaa"
+                        >
+                    </div>
+                </div>
+        
+            </div>
+        
+            <!-- BUTTONS -->
+        
+            <div class="buttons">
+        
+                <button class="start" onclick="startTimer()">
+                    Start
+                </button>
+        
+                <button class="pause" onclick="pauseTimer()">
+                    Pause
+                </button>
+        
+                <button class="reset" onclick="resetTimer()">
+                    Reset
+                </button>
+        
+                <button class="save" onclick="savePreset()">
+                    Save Preset
+                </button>
+        
+            </div>
+        
+            <!-- SMALL TIMERS -->
+        
+            <div class="trigger-list" id="triggerList"></div>
+        
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>
